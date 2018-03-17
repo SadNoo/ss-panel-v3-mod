@@ -75,7 +75,7 @@
 								<div class="card-inner">
 									<div class="card-inner">
 										<p class="card-heading">加密方式修改</p>
-										<p>注意：SS 和 SSR 支持的加密方式有所不同，请根据实际情况来进行选择！</p>
+										<p>注意：SS-libev 和 SSR 支持的加密方式有所不同，请根据实际情况来进行选择！</p>
 										<p>当前加密方式：{$user->method}</p>
 										<div class="form-group form-group-label">
 											<label class="floating-label" for="method">加密方式</label>
@@ -155,7 +155,7 @@
 										<p class="card-heading">协议&混淆设置</p>
 										<p>当前协议：{$user->protocol}</p>
 										<p>注意1：如果需要兼容原版SS请选择带_compatible的兼容选项！</p>
-										<p>注意2：如果您使用原版 SS 客户端此处请直接设置为 origin！</p>
+										<p>注意2：如果您使用 SS-libev 客户端此处请直接设置为 origin！</p>
 										<div class="form-group form-group-label">
 											<label class="floating-label" for="protocol">协议</label>
 											<select id="protocol" class="form-control">
@@ -171,7 +171,7 @@
 									<div class="card-inner">
 										<p>当前混淆方式：{$user->obfs}</p>
 										<p>注意1：如果需要兼容原版SS请选择带_compatible的兼容选项！</p>
-										<p>注意2：SS 和 SSR 支持的混淆类型有所不同，simple_obfs_* 为原版 SS 的混淆方式，其他为 SSR 的混淆方式！</p>
+										<p>注意2：SS 和 SSR 支持的混淆类型有所不同，simple_obfs_* 为 SS-libev 的混淆方式，其他为 SSR 的混淆方式！</p>
 										<div class="form-group form-group-label">
 											<label class="floating-label" for="obfs">混淆方式</label>
 											<select id="obfs" class="form-control">
@@ -543,7 +543,7 @@
                 dataType: "json",
                 data: {
                     protocol: $("#protocol").val(),
-					obfs: $("#obfs").val()
+					obfs: $("#obfs").val(),
                 },
                 success: function (data) {
                     if (data.ret) {

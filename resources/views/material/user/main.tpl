@@ -178,7 +178,7 @@
 		}
 		
 		.page-orange .ui-content-header {
-			background-image: url(/theme/material/css/images/bg/amber.jpg);
+			background-image: url(/theme/material/css/images/bg/brand.jpg);
 		}
 		
 		.content-heading {
@@ -328,8 +328,8 @@
 							{/if}
 							
 							<li>
-								<a href="/user/ticket">
-									<i class="icon icon-lg">question_answer</i>&nbsp;工单系统
+								<a href="/user">
+									<i class="icon icon-lg">question_answer</i>&nbsp;工单系统（暂停使用）
 								</a>
 							</li>
 						</ul>

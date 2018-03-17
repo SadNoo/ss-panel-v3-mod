@@ -32,6 +32,7 @@ class Pay
         return '
 						<form action="/user/alipay" method="get" target="_blank" >
 							<h3>支付宝充值</h3>
+                            <p>如需微信充值请联系邮箱：lhie1x@gmail.com</p>
 							<p>充值金额: <input type="text" name="amount" /></p>
 							<input type="submit" value="提交" />
 						</form>
@@ -41,7 +42,9 @@ class Pay
     private static function zfbjk_html($user)
     {
         return '
-						<p>请扫码，给我转账来充值，记得备注上 <code>'.$user->id.'</code>。<br></p>
+						<p>扫描二维码进行转账充值（10 秒内自动到账）</p>
+                        <h5>* 转账时请务必备注： <code>'.$user->id.'</code>（不备注不会自动到账）<br></h5>
+                        <h5>* 转账时请务必备注： <code>'.$user->id.'</code>（乱备注不会自动到账）<br></h5>
 						<img src="'.Config::get('zfbjk_qrcodeurl').'"/>
 ';
     }

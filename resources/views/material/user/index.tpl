@@ -24,8 +24,10 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">系统中最新公告</p>
-										<p>其他公告请到<a href="/user/announcement"/>公告面板</a>查看。</p>
+										<p class="card-heading"><a href="/user/announcement"/>公告面板</a></p>
+										<p><a href="https://github.com/lhie1/tuClub/blob/master/README.md#tuclub-简介">本站简介</a></p>
+										<p><a href="lhie1x@gmail.com">发送邮件</a> / <a href="https://t.me/tuClub">在线联系</a> / <a href="https://telegram.me/tuClub">交流群组</a> / <a href="https://t.me/tuClubNews">公告中心</a></p><br>
+										<p>本站：兼容<code>SS/SSR</code>；支持<code>Surge/SSR</code>托管订阅</p><br>
 										{if $ann != null}
 										<p>{$ann->content}</p>
 										{/if}
@@ -37,12 +39,12 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">连接信息 以及 All-in-One(快速配置指导)</p>
-										<p>您可以在这里查看您的连接信息。<br>同时，这里为您提供了自动化地配置文件生成，包含了所有 Shadowsocks 服务器的信息，方便您在诸多的服务器中快速添加，快速切换。</p>
+										<p class="card-heading">All-in-One (快速配置指导)</p>
+										<p>您可以在这里查看您的信息。<br>同时，这里为您提供了自动化地配置文件生成，包含了所有节点信息，方便您在诸多的服务器中快速添加，快速切换。</p>
 										<nav class="tab-nav margin-top-no">
 											<ul class="nav nav-list">
 												<li {if $ssr_prefer}class="active"{/if}>
-													<a class="waves-attach" data-toggle="tab" href="#all_ssr"><i class="icon icon-lg">airplanemode_active</i>&nbsp;ShadowsocksR</a>
+													<a class="waves-attach" data-toggle="tab" href="#all_ssr"><i class="icon icon-lg">airplanemode_active</i>&nbsp;ShadowsocksR（荐）</a>
 												</li>
 												<li {if !$ssr_prefer}class="active"{/if}>
 													<a class="waves-attach" data-toggle="tab" href="#all_ss"><i class="icon icon-lg">flight_takeoff</i>&nbsp;Shadowsocks</a>
@@ -57,7 +59,7 @@
 													<nav class="tab-nav margin-top-no">
 														<ul class="nav nav-list">
 															<li class="active">
-																<a class="waves-attach" data-toggle="tab" href="#all_ssr_info"><i class="icon icon-lg">info_outline</i>&nbsp;连接信息</a>
+																<a class="waves-attach" data-toggle="tab" href="#all_ssr_info"><i class="icon icon-lg">info_outline</i>&nbsp;信息</a>
 															</li>
 															<li>
 																<a class="waves-attach" data-toggle="tab" href="#all_ssr_windows"><i class="icon icon-lg">desktop_windows</i>&nbsp;Windows</a>
@@ -88,66 +90,52 @@
 															<p><dt>密码</dt>
 															<dd>{$user->passwd}</dd></p>
 
-															<p><dt>自定义加密</dt>
+															<p><dt>加密</dt>
 															<dd>{$user->method}</dd></p>
 
-															<p><dt>自定义协议</dt>
+															<p><dt>协议</dt>
 															<dd>{$user->protocol}</dd></p>
 
-															<p><dt>自定义混淆</dt>
+															<p><dt>混淆</dt>
 															<dd>{$user->obfs}</dd></p>
 														</dl>
 														{else}
-															<p>您好，您目前的 加密方式，混淆，或者协议设置在 ShadowsocksR 客户端下无法连接。请您选用 Shadowsocks 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
-
-															<p>同时, ShadowsocksR 单端口多用户的连接不受您设置的影响,您可以在此使用相应的客户端进行连接~</p>
-
-															<p>请注意，在当前状态下您的 SSR 订阅链接已经失效，您无法通过此种方式导入节点。</p>
+															<p>您目前的加密方式、协议、混淆，使用<code>普通端口</code>无法在 <code>SSR 客户端</code>下连接。请您使用<code>固定端口模式</code>或选用 <code>SS 客户端</code>来连接，或者到 资料编辑 页面修改后再来查看此处。</p></p>
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ssr_windows">
-														<p><a href="/ssr-download/ssr-win.7z">下载</a>，解压，运行程序，然后您有三种方式导入所有节点<br>
-															(1)下载<a href="/user/getpcconf?is_mu=0&is_ss=0">这个（普通端口）</a>或者<a href="/user/getpcconf?is_mu=1&is_ss=0">这个（单端口多用户）</a>，右键小飞机 服务器 -- 从配置文件导入服务器，选择这个文件，<br>
-															(2)点击<a class="copy-text" data-clipboard-text="{$ssr_url_all}">这里（普通端口）</a>或者<a class="copy-text" data-clipboard-text="{$ssr_url_all}">这个(单端口多用户）</a>，然后右键小飞机 -- 从剪贴板复制地址<br>
-															(3)(推荐)右键小飞机--服务器--SSR服务器订阅设置，将订阅地址设置为下面的地址，其他参数留空，确定之后再更新 SSR 服务器订阅。<br>
-															然后选择一个合适的服务器，系统代理模式选”全局模式”，代理规则选“绕过局域网和大陆”，然后即可上网。</p>
-
-														<p>SSR 订阅地址：<br>
-															普通端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code><br>
-															单端口多用户端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code>
-														</p>
+														<p>下载：<a href="/ssr-download/ssr-win.7z">客户端</a><br><br>
+														右键<code>ShadowsocksR</code>托盘图标 -> SSR服务器订阅 -> SSR 服务器订阅设置，将订阅地址填入地址后面的编辑框，点击确定。<br><br>
+														获取节点：服务器 -> 更新 SSR 服务器订阅（不通过代理）<br><br>
+														建议：系统代理 -> 模式 -> 全局模式/Pac模式；代理规则 -> 绕过局域网和大陆</p>
+														<br>游戏/特殊：<a href="/ssr-branch/SSTap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_mac">
-														<p><a href="/ssr-download/ssr-mac.dmg">下载</a>，安装，然后下载<a href="/user/getpcconf?is_mu=0&is_ss=0">这个(普通端口)</a>或者<a  href="/user/getpcconf?is_mu=1&is_ss=0">这个（单端口多用户）</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
+														<p>下载：<a href="/ssr-download/ssr-mac.dmg">客户端</a><br><br>
+														右键<code>ShadowsocksR</code>的托盘图标 -> 服务器 -> 编辑订阅，点击<code>+</code>，将订阅地址填入订阅地址后面的编辑框，点击<code>OK</code>。<br><br>
+														获取节点：服务器 -> 手动更新订阅<br><br>
+														建议：白名单模式/Pac模式</p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_ios">
-														<p>推荐下载<a href="https://itunes.apple.com/cn/app/shadowrocket/id932747118?mt=8">Shadowrocket</a>，然后在 Safari 中点击<a href="{$ssr_url_all}">这个（普通端口）</a>或者<a href="{$ssr_url_all_mu}">这个（单端口多用户）</a>，然后点击确定，就可以批量添加节点。</p>
-														<p>SSR 订阅地址：<br>
-															普通端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code><br>
-															单端口多用户端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code>
-														</p>
+														<p>客户端：Shadowrocket<br>（联系 lhie1x@gmail.com 获取下载方式）<br><br>打开客户端，点击首页的右上角的`+`，选择类型：Subscribe，将订阅地址填入`URL`后面的编辑框，点击完成<br><br>
+														自动更新节点：设置 -> 服务器订阅 -> 打开时更新<br><br>
+														推荐：全局路由 -> 配置</p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_android">
-														<p><a href="/ssr-download/ssr-android.apk">下载</a>，安装，然后在手机上默认浏览器中点击<a href="{$ssr_url_all}">这个链接（普通端口）</a>或者<a href="{$ssr_url_all_mu}">这个链接（单端口多用户）</a>，然后点击确定，批量添加完节点，然后路由选择绕过大陆，右上角开启就可以上网了。同时提供一个 ACL 地址，<a href="/link/{$acl_token}">长按复制地址</a>到客户端里应用即可。</p>
-														<p>SSR 订阅地址，您可以在节点列表处添加订阅来自动更新节点：<br>
-															普通端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code><br>
-															单端口多用户端口地址：<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code>
-														</p>
+														<p>下载客户端：<a href="/ssr-download/ssr-android.apk">客户端</a><br><br>
+														点击应用顶部的<code>ShadowsocksR ⬇️</code> -> 点击<code>+</code> -> 添加/升级 SSR 订阅，将订阅地址填入并添加，点击确定并升级。<br><br>
+														建议：打开 UDP 转发；打开 TCP Fast Open ；路由：绕过局域网和中国大陆地址<br><br>
+														ACL：<br><code>https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/banAD.acl</code></p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_router">
-														<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">这个固件</a>，然后 SSH 登陆路由器，执行以下命令（导入普通端口）<br>
-														<code>wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-														或者这个单端口多用户的<br>
-														<code>wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=0 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-														执行完毕以后就可以到路由器的设置面板里随意选择 Shadowsocks 服务器进行连接了。</p>
+														<p>刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">此帖的固件</a>，然后将订阅地址导入即可。</p>
 													</div>
-
 												</div>
 												<div class="tab-pane fade {if !$ssr_prefer}active in{/if}" id="all_ss">
 													<nav class="tab-nav margin-top-no">
 														<ul class="nav nav-list">
 															<li class="active">
-																<a class="waves-attach" data-toggle="tab" href="#all_ss_info"><i class="icon icon-lg">info_outline</i>&nbsp;连接信息</a>
+																<a class="waves-attach" data-toggle="tab" href="#all_ss_info"><i class="icon icon-lg">info_outline</i>&nbsp;信息</a>
 															</li>
 															<li>
 																<a class="waves-attach" data-toggle="tab" href="#all_ss_windows"><i class="icon icon-lg">desktop_windows</i>&nbsp;Windows</a>
@@ -176,51 +164,75 @@
 														<dl class="dl-horizontal">
 															<p>各个节点的地址请到节点列表查看！</p>
 
-
 															<p><dt>端口</dt>
 															<dd>{$user->port}</dd></p>
 
 															<p><dt>密码</dt>
 															<dd>{$user->passwd}</dd></p>
 
-															<p><dt>自定义加密</dt>
+															<p><dt>加密</dt>
 															<dd>{$user->method}</dd></p>
 
-															<p><dt>自定义混淆</dt>
+															<p><dt>协议</dt>
+															<dd>{$user->protocol}</dd></p>
+
+															<p><dt>混淆</dt>
 															<dd>{$user->obfs}</dd></p>
 														</dl>
 														{else}
-															<p>您好，您目前的 加密方式，混淆，或者协议设置在 SS 客户端下无法连接。请您选用 SSR 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
-															<p>同时, Shadowsocks 单端口多用户的连接不受您设置的影响,您可以在此使用相应的客户端进行连接~</p>
+															<p>您目前的加密方式、协议、混淆无法在 <code>SS 客户端</code>下连接。请您选用 SSR 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ss_windows">
-														<p><a href="/ssr-download/ss-win.zip">下载</a>，解压，运行程序，然后您有两种方式导入所有节点<br>
-															(1)下载<a href="/user/getpcconf?is_mu=0&is_ss=1">这个（普通端口）</a>，放到小飞机的目录下，然后打开小飞机。<br>
-															(2)点击<a class="copy-text" data-clipboard-text="{$ss_url_all_win}">这里（普通端口）</a>, 然后右键小飞机 -- 从剪贴板导入 URL<br>
+														<p>下载：<a href="/ssr-branch/ss-win.zip">客户端</a><br><br>您有两种方式导入节点：<br><br>
+														（1）<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，保存至`Shadowsocks`的目录下，打开`Shadowsocks`即载入所有节点信息。<br>
+														（2）<a class="copy-text" data-clipboard-text="{$ss_url_all_win}">复制节点信息到剪切板</a>, 右键`Shadowsocks`的托盘图标 -> 从剪贴板导入 URL<br><br>
+														推荐：系统代理模式 -> Pac 模式<br><br>
+														Obfs：<br>
+														插件：obfs-local<br>
+														插件选项：obfs=tls;obfs-host=cloudfront.net</p><br>
+														<p>———————————————————————————————
+														<br><br>游戏/特殊：<a href="/ssr-branch/SSTap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_mac">
-														<p><a href="/ssr-download/ss-mac.zip">下载</a>，安装，然后下载<a href="/user/getpcconf?is_mu=0&is_ss=1">这个（普通端口）</a>或者<a href="/user/getpcconf?is_mu=1&is_ss=1">这个（单端口多用户）</a>，运行程序，小飞机上右键 服务器列表 子菜单 的 “导入服务器配置文件...” 导入这个文件，然后选择一个合适的服务器，更新一下PAC，然后开启系统代理即可上网。</p>
+														<p>下载：<a href="/ssr-download/ss-mac.zip">客户端</a><br><br>
+														<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，右键`Shadowsocks`的托盘图标 -> 服务器列表 -> 导入服务器配置文件...，选择这个文件（gui-config.json<br><br>
+														推荐：Pac模式<br></p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_ios">
-														<p>推荐下载<a href="https://itunes.apple.com/cn/app/shadowrocket/id932747118?mt=8">Shadowrocket</a>，然后在 Safari 中点击<a href="{$ss_url_all}">这个（普通端口）</a>或者<a href="{$ss_url_all_mu}">这个（单端口多用户）</a>，然后点击确定，就可以批量添加节点。</p>
-														<p>iOS 下载<a href="/link/{$ios_token}?is_ss=1">这个（普通端口）</a>或者<a href="/link/{$ios_token}?is_ss=1&is_mu=1">这个（单端口多用户）</a>，导入到 Surge 中，然后就可以随意切换服务器上网了。</p>
+														<p>推荐使用 <code>Workflow</code> 导入Surge：<br><br><a href="https://workflow.is/workflows/3a32d2bf7750466da15749eedc60ea18">🐰 User Data</a> / <a href="https://workflow.is/workflows/df5a74a8efb14218ba15fe64d94fa9f5">Rule OTA</a></p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_android">
-														<p><a href="/ssr-download/ss-android.apk">下载</a>，再<a href="/ssr-download/ss-android-obfs.apk">下载</a>，然后安装，然后在手机上点击<a class="copy-text" data-clipboard-text="{$ss_url_all}">这个链接（普通端口）</a>或者<a class="copy-text" data-clipboard-text="{$ss_url_all_mu}">这个链接（单端口多用户端口）</a>复制到剪贴板，打开 Shadowsocks 客户端，选择从剪贴板导入，然后选择一个节点，设置一下路由为绕过大陆，点击飞机就可以上网了。</p>
+														<p>下载：<a href="/ssr-download/ss-android.apk">客户端</a> 和 <a href="/ssr-download/ss-android-obfs.apk">插件</a><br><br>
+														<a class="copy-text" data-clipboard-text="{$ss_url_all}">复制节点信息到剪切板</a>，点击应用右上角的`+`，选择从剪贴板导入，选择任意节点，点击右下角的纸飞机按钮即可科学上网<br><br>
+														推荐：路由：绕过局域网及中国大陆地址<br><br>
+														Obfs：<br>
+														插件：obfs-local<br>
+														插件选项：obfs=tls;obfs-host=cloudfront.net</p><br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_router">
-														<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">这个固件</a>，然后 SSH 登陆路由器，执行以下命令（导入普通端口）<br>
-														<code>wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-														或者这个单端口多用户的<br>
-														<code>wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=1 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token_without_mu}?is_ss=1 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br>
-														执行完毕以后就可以到路由器的设置面板里随意选择 Shadowsocks 服务器进行连接了。</p>
+														<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">此帖的固件</a>，然后 SSH 登陆路由器，执行以下命令：<br>
+														<code>wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br><br>
+														执行完毕以后就可以到路由器的设置面板里随意选择 Shadowsocks 服务器进行连接了。<br><br>
+														离线安装包：<a href="/ssr-branch/ss-merlin.tar">SS-Merlin</a></p>
 													</div>
 												</div>
 											</div>
 										</div>
 										<div class="card-action">
 											<div class="card-action-btn pull-left">
+												<p>SSR 普通端口订阅地址：<br>
+													<code>{$baseUrl}/link/{$ssr_sub_token}?mu=0</code></p>
+												<p>SSR 固定端口订阅地址：<br>
+													<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code></p>
+												<p>Surge 托管地址：<br>
+													<code>{$baseUrl}/link/{$ios_token}?is_ss=1</code></p><br>
+												<p>使用<code>Workflow</code>导入（Surge / Shadowrcoket）：<br><br>
+													<a href="https://workflow.is/workflows/3a32d2bf7750466da15749eedc60ea18">🐰 User Data</a> / <a href="https://workflow.is/workflows/df5a74a8efb14218ba15fe64d94fa9f5">Rule OTA</a><br><br>
+												<p>兼容：<code>Surge</code>使用普通端口模式 | <code>SSR</code>使用固定端口模式</p>
+												<p>备注：除 <code>Surge 客户端</code> 都建议使用 <code>SSR 客户端 + SSR 订阅</code></p>
+												<p>备注：<code>SSR 普通端口</code>与<code>SSR 固定端口</code>在实际使用中无差别</p>
+												<p>备注：使用<code>Surge 托管地址</code>之前请使用<code>Workflow</code>运行一次</p><br>
 												<p><a class="btn btn-brand btn-flat waves-attach" href="/user/url_reset"><span class="icon">close</span>&nbsp;重置所有链接</a></p>
 											</div>
 										</div>
@@ -228,7 +240,6 @@
 
 								</div>
 							</div>
-
 						</div>
 
 						<div class="col-lg-6 col-md-6">
@@ -241,11 +252,8 @@
 											<p><dt>帐号等级</dt>
 											<dd>{$user->class}</dd></p>
 
-											<p><dt>等级过期时间</dt>
+											<p><dt>到期时间</dt>
 											<dd>{$user->class_expire}</dd></p>
-
-											<p><dt>帐号过期时间</dt>
-											<dd>{$user->expire_in}</dd>
 
 											<p><dt>速度限制</dt>
 											{if $user->node_speedlimit!=0}
@@ -322,14 +330,12 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading">续命获取流量</p>
-											<p>流量不会重置，可以通过续命获取流量。</p>
+										<p class="card-heading">签到获取流量</p>
+											<p>每次签到可以获取{$config['checkinMin']}~{$config['checkinMax']}MB流量。</p>
 
-											<p>每次续命可以获取{$config['checkinMin']}~{$config['checkinMax']}MB流量。</p>
+											<p>每天可以签到一次。您可以点击按钮或者摇动手机来签到。</p>
 
-											<p>每天可以续命一次。您可以点击按钮或者摇动手机来续命。</p>
-
-											<p>上次续命时间：<code>{$user->lastCheckInTime()}</code></p>
+											<p>上次签到时间：<code>{$user->lastCheckInTime()}</code></p>
 
 											<p id="checkin-msg"></p>
 
@@ -342,10 +348,10 @@
 										<div class="card-action-btn pull-left">
 											{if $user->isAbleToCheckin() }
 												<p id="checkin-btn">
-													<button id="checkin" class="btn btn-brand btn-flat waves-attach"><span class="icon">check</span>&nbsp;续命</button>
+													<button id="checkin" class="btn btn-brand btn-flat waves-attach"><span class="icon">check</span>&nbsp;签到</button>
 												</p>
 											{else}
-												<p><a class="btn btn-brand disabled btn-flat waves-attach" href="#"><span class="icon">check</span>&nbsp;不能续命</a></p>
+												<p><a class="btn btn-brand disabled btn-flat waves-attach" href="#"><span class="icon">check</span>&nbsp;不能签到</a></p>
 											{/if}
 										</div>
 									</div>
