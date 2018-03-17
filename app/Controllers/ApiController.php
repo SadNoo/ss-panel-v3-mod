@@ -188,7 +188,7 @@ class ApiController extends BaseController
     //是否是登录
     $user = Auth::getUser();
     $base_url = Config::get('baseUrl');
-    $shops = Shop::where("status", 1)->paginate(15, ['*'], 'page', $pageNum);
+    $shops = Shop::where("status", 1)->paginate(15, ['*'], 'page', $pageNum=0);
     $nodes = Node::where('sort', 0)->where("type", "1")->where(
           function ($query) use ($user) {
               $query->where("node_group", "=", $user->node_group)
