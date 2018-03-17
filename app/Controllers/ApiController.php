@@ -207,8 +207,8 @@ class ApiController extends BaseController
       //get other info
       $rest['link'] = $base_url.'/link/'.LinkController::GenerateSSRSubCode($user->id, 0).'?mu=1';
       //$rest['other'] = [
-      		//'ssr_sub_token' =>  LinkController::GenerateSSRSubCode($user->id, 0),
-        	//'base_url' => $base_url
+            //'ssr_sub_token' =>  LinkController::GenerateSSRSubCode($user->id, 0),
+            //'base_url' => $base_url
       //];
       return $this->echoJson($response, $rest);
     }

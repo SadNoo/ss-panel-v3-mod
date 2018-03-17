@@ -104,14 +104,14 @@
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ssr_windows">
-														<p>下载：<a href="/ssr-download/ssr-win.7z">客户端</a><br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ssr-win.7z">客户端</a><br><br>
 														右键<code>ShadowsocksR</code>托盘图标 -> SSR服务器订阅 -> SSR 服务器订阅设置，将订阅地址填入地址后面的编辑框，点击确定。<br><br>
 														获取节点：服务器 -> 更新 SSR 服务器订阅（不通过代理）<br><br>
 														建议：系统代理 -> 模式 -> 全局模式/Pac模式；代理规则 -> 绕过局域网和大陆</p>
-														<br>游戏/特殊：<a href="/ssr-branch/SSTap.7z">SS-Tap</a><br>
+														<br>游戏/特殊：<a href="http://omgib13x8.bkt.clouddn.com/ssr-tap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_mac">
-														<p>下载：<a href="/ssr-download/ssr-mac.dmg">客户端</a><br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ssr-mac.dmg">客户端</a><br><br>
 														右键<code>ShadowsocksR</code>的托盘图标 -> 服务器 -> 编辑订阅，点击<code>+</code>，将订阅地址填入订阅地址后面的编辑框，点击<code>OK</code>。<br><br>
 														获取节点：服务器 -> 手动更新订阅<br><br>
 														建议：白名单模式/Pac模式</p>
@@ -122,7 +122,7 @@
 														推荐：全局路由 -> 配置</p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_android">
-														<p>下载客户端：<a href="/ssr-download/ssr-android.apk">客户端</a><br><br>
+														<p>下载客户端：<a href="http://omgib13x8.bkt.clouddn.com/ssr-android.apk">客户端</a><br><br>
 														点击应用顶部的<code>ShadowsocksR ⬇️</code> -> 点击<code>+</code> -> 添加/升级 SSR 订阅，将订阅地址填入并添加，点击确定并升级。<br><br>
 														建议：打开 UDP 转发；打开 TCP Fast Open ；路由：绕过局域网和中国大陆地址<br><br>
 														ACL：<br><code>https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/banAD.acl</code></p>
@@ -184,7 +184,8 @@
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ss_windows">
-														<p>下载：<a href="/ssr-branch/ss-win.zip">客户端</a><br><br>您有两种方式导入节点：<br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-win.zip">客户端<br><br>
+															您有两种方式导入节点：<br><br>
 														（1）<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，保存至`Shadowsocks`的目录下，打开`Shadowsocks`即载入所有节点信息。<br>
 														（2）<a class="copy-text" data-clipboard-text="{$ss_url_all_win}">复制节点信息到剪切板</a>, 右键`Shadowsocks`的托盘图标 -> 从剪贴板导入 URL<br><br>
 														推荐：系统代理模式 -> Pac 模式<br><br>
@@ -192,10 +193,10 @@
 														插件：obfs-local<br>
 														插件选项：obfs=tls;obfs-host=cloudfront.net</p><br>
 														<p>———————————————————————————————
-														<br><br>游戏/特殊：<a href="/ssr-branch/SSTap.7z">SS-Tap</a><br>
+														<br><br>游戏/特殊：<a href="http://omgib13x8.bkt.clouddn.com/ssr-tap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_mac">
-														<p>下载：<a href="/ssr-download/ss-mac.zip">客户端</a><br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-mac.zip">客户端</a><br><br>
 														<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，右键`Shadowsocks`的托盘图标 -> 服务器列表 -> 导入服务器配置文件...，选择这个文件（gui-config.json<br><br>
 														推荐：Pac模式<br></p>
 													</div>
@@ -203,7 +204,7 @@
 														<p>推荐使用 <code>Workflow</code> 导入Surge：<br><br><a href="https://workflow.is/workflows/3a32d2bf7750466da15749eedc60ea18">🐰 User Data</a> / <a href="https://workflow.is/workflows/df5a74a8efb14218ba15fe64d94fa9f5">Rule OTA</a></p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_android">
-														<p>下载：<a href="/ssr-download/ss-android.apk">客户端</a> 和 <a href="/ssr-download/ss-android-obfs.apk">插件</a><br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-android.apk">客户端</a> 和 <a href="http://omgib13x8.bkt.clouddn.com/ss-android-obfs.apk">插件</a><br><br>
 														<a class="copy-text" data-clipboard-text="{$ss_url_all}">复制节点信息到剪切板</a>，点击应用右上角的`+`，选择从剪贴板导入，选择任意节点，点击右下角的纸飞机按钮即可科学上网<br><br>
 														推荐：路由：绕过局域网及中国大陆地址<br><br>
 														Obfs：<br>
