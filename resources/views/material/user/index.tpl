@@ -184,7 +184,7 @@
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ss_windows">
-														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-win.zip">客户端<br><br>
+														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-win.zip">客户端</a><br><br>
 															您有两种方式导入节点：<br><br>
 														（1）<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，保存至`Shadowsocks`的目录下，打开`Shadowsocks`即载入所有节点信息。<br>
 														（2）<a class="copy-text" data-clipboard-text="{$ss_url_all_win}">复制节点信息到剪切板</a>, 右键`Shadowsocks`的托盘图标 -> 从剪贴板导入 URL<br><br>
