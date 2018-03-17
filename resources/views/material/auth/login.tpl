@@ -30,7 +30,7 @@
 										<div class="card-main">
 											<div class="card-header">
 												<div class="card-inner">
-													<h1 class="card-heading">登录到用户中心</h1>
+													<h1 class="card-heading">登录</h1>
 												</div>
 											</div>
 											<div class="card-inner">
@@ -52,7 +52,7 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="passwd">密码</label>
+																<label class="floating-label" for="passwd">密码（所有老用户密码均已改为“123456789”）</label>
 																<input class="form-control" id="passwd" type="password" name="Password">
 															</div>
 														</div>
@@ -61,7 +61,7 @@
 													<div class="form-group form-group-label">
 														<div class="row">
 															<div class="col-md-10 col-md-push-1">
-																<label class="floating-label" for="code">两步验证码(没有就别填)</label>
+																<label class="floating-label" for="code">两步验证（没开就别填）</label>
 																<input class="form-control" id="code" type="text" placeholder="没有就别填">
 															</div>
 														</div>
@@ -149,7 +149,7 @@
 
 						<div class="clearfix">
 							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/password/reset">忘记密码</a></p>
-							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">注册个帐号</a></p>
+							<p class="margin-no-top pull-right"><a class="btn btn-flat btn-brand waves-attach" href="/auth/register">注册帐号</a></p>
 						</div>
 
 
@@ -337,3 +337,4 @@ $(document).ready(function () {
 </script>
 
 {/if}
+

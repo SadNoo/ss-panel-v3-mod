@@ -12,12 +12,12 @@
 							<div class="card-main">
 								<div class="card-header">
 									<div class="card-inner">
-										<h1 class="card-heading">和我签订契约，成为魔法少女吧。</h1>
+										<h1 class="card-heading">注册</h1>
 									</div>
 								</div>
 								<div class="card-inner">
 									<p class="text-center">
-										<span class="avatar avatar-inline avatar-lg">
+										<span class="avatar avatar-inline avatar-lg">javascript:;
 											<img alt="Login" src="/theme/material/images/users/avatar-001.jpg">
 										</span>
 									</p>
@@ -44,8 +44,8 @@
 										<div class="form-group form-group-label">
 											<div class="row">
 												<div class="col-md-10 col-md-push-1">
-													<label class="floating-label" for="email_code">邮箱验证码</label>
-													<input class="form-control" id="email_code" type="text">
+													<label class="floating-label" for="email_code">验证码</label>
+													<input class="form-control" id="email_code" type="text"><br>
 													<button id="email_verify" class="btn btn-block btn-brand-accent waves-attach waves-light">获取验证码</button>
 												</div>
 											</div>
@@ -102,7 +102,7 @@
 											<div class="form-group form-group-label">
 												<div class="row">
 													<div class="col-md-10 col-md-push-1">
-														<label class="floating-label" for="code">邀请码</label>
+														<label class="floating-label" for="code">邀请码（请在左边的 Dock 获取邀请码）</label>
 														<input class="form-control" id="code" type="text" value="{$code}">
 													</div>
 												</div>
@@ -139,7 +139,7 @@
 							</div>
 						</div>
 						<div class="clearfix">
-							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">已经注册？请登录</a></p>
+							<p class="margin-no-top pull-left"><a class="btn btn-flat btn-brand waves-attach" href="/auth/login">已注册？请登录</a></p>
 						</div>
 						
 						
@@ -158,7 +158,7 @@
 										{include file='reg_tos.tpl'}
 									</div>
 									<div class="modal-footer">
-										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">我不服</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg" type="button">资慈</button></p>
+										<p class="text-right"><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" type="button" id="cancel">拒绝</button><button class="btn btn-flat btn-brand-accent waves-attach waves-effect" data-dismiss="modal" id="reg" type="button">同意</button></p>
 										
 									</div>
 								</div>
@@ -352,3 +352,4 @@ function time(o) {
 
 
 	
+
