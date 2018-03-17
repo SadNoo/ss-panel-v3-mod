@@ -15,6 +15,7 @@ use App\Models\LoginIp;
 use App\Utils\Wecenter;
 use App\Utils\Geetest;
 use App\Utils\GA;
+use App\Models\Shop;
 /**
  *  ApiController
  */
