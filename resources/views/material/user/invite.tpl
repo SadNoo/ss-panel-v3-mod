@@ -76,8 +76,29 @@
 							</div>
 						</div>
 					</div>
+
+					<div class="col-lg-12 col-md-12">
+						<div class="card margin-bottom-no">
+							<div class="card-main">
+								<div class="card-inner">
+									<div class="card-inner">
+										<p class="card-heading">邀请</p>
+										<p>当前您可以生成<code>{$user->invite_num}</code>个邀请码。 </p>
+									</div>
+									{if $user->invite_num }
+									<div class="card-action">
+										<div class="card-action-btn pull-left">
+											
+												<button id="invite" class="btn btn-flat waves-attach">生成我的邀请码</button>
+											
+										</div>
+									</div>
+									{/if}
+								</div>
+							</div>
+						</div>
+					</div>
 					
-    {*
 					<div class="col-lg-12 col-md-12">
 						<div class="card margin-bottom-no">
 							<div class="card-main">
@@ -114,7 +135,6 @@
 							</div>
 						</div>
 					</div>
-	*}				
 					
 					
 					{include file='dialog.tpl'}
