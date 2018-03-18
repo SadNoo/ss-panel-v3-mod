@@ -100,7 +100,9 @@
 															<dd>{$user->obfs}</dd></p>
 														</dl>
 														{else}
-															<p>您目前的加密方式、协议、混淆，使用<code>普通端口</code>无法在 <code>SSR 客户端</code>下连接。请您使用<code>固定端口模式</code>或选用 <code>SS 客户端</code>来连接，或者到 资料编辑 页面修改后再来查看此处。</p></p>
+															<p>您目前的加密方式、协议、混淆，使用<code>普通端口</code>无法在 <code>SSR 客户端</code>下连接。请您使用<code>固定端口模式</code>或选用 <code>SS 客户端</code>来连接，或者到 资料编辑 页面修改后再来查看此处。<br><br>
+															<p>SSR 固定端口订阅地址：<br>
+															<code>{$baseUrl}/link/{$ssr_sub_token}?mu=1</code></p></p></p>
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ssr_windows">
