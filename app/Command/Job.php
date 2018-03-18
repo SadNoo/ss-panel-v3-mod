@@ -482,7 +482,16 @@ class Job
             foreach ($nodes as $node) {
                 if ($node->isNodeOnline() === false && time() - $node->node_heartbeat <= 360) {
                     foreach ($adminUser as $user) {
-                        catch (Exception $e) {
+                        echo "Send offline mail to user: ".$user->id;
+                        $subject = Config::get('appName')."-系统警告";
+                        $to = $user->email;
+                        $text = "管理员您好，系统发现节点 ".$node->name." 掉线了，请您及时处理。" ;
+                        try {
+                            Mail::send($to, $subject, 'news/warn.tpl', [
+                                "user" => $user,"text" => $text
+                            ], [
+                            ]);
+                        } catch (Exception $e) {
                             echo $e->getMessage();
                         }
 
@@ -539,7 +548,16 @@ class Job
             foreach ($nodes as $node) {
                 if (time()-$node->node_heartbeat<60&&file_exists(BASE_PATH."/storage/".$node->id.".offline")&&$node->node_heartbeat!=0&&($node->sort==0||$node->sort==7||$node->sort==8||$node->sort==10)) {
                     foreach ($adminUser as $user) {
-                        catch (Exception $e) {
+                        echo "Send offline mail to user: ".$user->id;
+                        $subject = Config::get('appName')."-系统提示";
+                        $to = $user->email;
+                        $text = "管理员您好，系统发现节点 ".$node->name." 恢复上线了。" ;
+                        try {
+                            Mail::send($to, $subject, 'news/warn.tpl', [
+                                "user" => $user,"text" => $text
+                            ], [
+                            ]);
+                        } catch (Exception $e) {
                             echo $e->getMessage();
                         }
 
