@@ -261,7 +261,7 @@
 							
 							<li>
 								<a href="/user/invite">
-									<i class="icon icon-lg">loyalty</i>&nbsp;邀请码
+									<i class="icon icon-lg">loyalty</i>&nbsp;邀请注册
 								</a>
 							</li>
 							
