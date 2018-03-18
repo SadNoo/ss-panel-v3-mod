@@ -25,7 +25,7 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>{$config["appName"]} 的邀请码，没了的话就烧纸吧。</p>
+								<p>{$config["appName"]}云服务的邀请码，没了的话就自己想办法吧。</p>
 							</div>
 						</div>
 					</div>
