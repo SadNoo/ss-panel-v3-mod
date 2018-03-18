@@ -119,7 +119,7 @@
 														建议：白名单模式/Pac模式</p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_ios">
-														<p>客户端：Shadowrocket<br>（联系 lhie1x@gmail.com 获取下载方式）<br><br>打开客户端，点击首页的右上角的`+`，选择类型：Subscribe，将订阅地址填入`URL`后面的编辑框，点击完成<br><br>
+														<p>客户端：Shadowrocket<br>（联系 admin@lhie1.com 获取下载方式）<br><br>打开客户端，点击首页的右上角的`+`，选择类型：Subscribe，将订阅地址填入`URL`后面的编辑框，点击完成<br><br>
 														自动更新节点：设置 -> 服务器订阅 -> 打开时更新<br><br>
 														推荐：全局路由 -> 配置</p>
 													</div>
