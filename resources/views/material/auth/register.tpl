@@ -177,15 +177,25 @@
 
 <script>
     $(document).ready(function(){
-        function register(){
-			
-			document.getElementById("tos").disabled = true; 
+         var affid = {$aff};
+
+          function register(){
+            
+          if(!(typeof affid === 'number' && affid%1 === 0)) {
+              $("#result").modal();
+              $("#msg").html("aff不合法");
+
+            return false;
+          }
+
+		 document.getElementById("tos").disabled = true; 
 			
             $.ajax({
                 type:"POST",
                 url:"/auth/register",
                 dataType:"json",
                 data:{
+                    aff:  affid,
                     email: $("#email").val(),
                     name: $("#name").val(),
                     passwd: $("#passwd").val(),
