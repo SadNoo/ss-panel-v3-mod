@@ -487,7 +487,7 @@ class Job
                         $to = $user->email;
                         $text = "管理员您好，系统发现节点 ".$node->name." 掉线了，请您及时处理。" ;
                         try {
-                            Mail::send($to, $subject, 'news/warn.tpl', [
+                            //Mail::send($to, $subject, 'news/warn.tpl', [
                                 "user" => $user,"text" => $text
                             ], [
                             ]);
@@ -553,7 +553,7 @@ class Job
                         $to = $user->email;
                         $text = "管理员您好，系统发现节点 ".$node->name." 恢复上线了。" ;
                         try {
-                            Mail::send($to, $subject, 'news/warn.tpl', [
+                            //Mail::send($to, $subject, 'news/warn.tpl', [
                                 "user" => $user,"text" => $text
                             ], [
                             ]);
