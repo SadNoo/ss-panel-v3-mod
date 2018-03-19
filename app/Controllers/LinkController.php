@@ -205,7 +205,7 @@ class LinkController extends BaseController
                     $is_mu = $request->getQueryParams()["is_mu"];
                 }
 
-                $newResponse = $response->withHeader('Content-type', ' application/octet-stream; charset=utf-8')->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate')->withHeader('Content-Disposition', ' attachment; filename=Black hole.conf');//->getBody()->write($builder->output());
+                $newResponse = $response->withHeader('Content-type', ' application/octet-stream; charset=utf-8')->withHeader('Cache-Control', 'no-store, no-cache, must-revalidate')->withHeader('Content-Disposition', ' attachment; filename=black hole.conf');//->getBody()->write($builder->output());
                 $newResponse->getBody()->write(LinkController::GetIosConf($user, $is_mu, $is_ss));
                 return $newResponse;
             case 3:
