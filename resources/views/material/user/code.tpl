@@ -31,7 +31,7 @@
 							<div class="card-main">
 								<div class="card-inner">
 									<div class="card-inner">
-										<p class="card-heading">充值码</p>
+										<p class="card-heading">在线充值</p>
 											{$pmw}
 									</div>
 								</div>
