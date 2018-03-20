@@ -169,21 +169,6 @@ class AuthController extends BaseController
             $code = $antiXss->xss_clean($ary['code']);
         }
 
-        $affid  = "0";
-        if (!empty($_COOKIE['affid'])) {
-            $affid=$_COOKIE['affid'];
-        }
-
-        if (isset($ary['affid'])) {
-            $antiXss = new AntiXSS();
-            $affid = $antiXss->xss_clean($ary['affid']);
-            if (is_numeric($affid)) {
-                setCookie("affid", $affid);
-            } else {
-                $affid ="0";
-            }
-        }
-
         $uid = time().rand(1, 10000) ;
 
         if (Config::get('enable_geetest_reg') == 'true') {
@@ -194,7 +179,7 @@ class AuthController extends BaseController
 
 
 
-        return $this->view()->assign('enable_invite_code', Config::get('enable_invite_code'))->assign('geetest_html', $GtSdk)->assign('enable_email_verify', Config::get('enable_email_verify'))->assign('code', $code)->assign('aff', $affid)->display('auth/register.tpl');
+        return $this->view()->assign('enable_invite_code', Config::get('enable_invite_code'))->assign('geetest_html', $GtSdk)->assign('enable_email_verify', Config::get('enable_email_verify'))->assign('code', $code)->display('auth/register.tpl');
     }
 
 
@@ -277,8 +262,6 @@ class AuthController extends BaseController
         $imtype = $request->getParam('imtype');
         $emailcode = $request->getParam('emailcode');
         $wechat = $request->getParam('wechat');
-        $affid = $request->getParam('aff');
-        $ref_by = 0;
         // check code
 
         if (Config::get('enable_geetest_reg') == 'true') {
@@ -378,28 +361,11 @@ class AuthController extends BaseController
         $user->invite_num = Config::get('inviteNum');
         $user->auto_reset_day = Config::get('reg_auto_reset_day');
         $user->auto_reset_bandwidth = Config::get('reg_auto_reset_bandwidth');
-
-
-            //affs
-        if (($affid && (is_numeric($affid))) || $affid == '0') {
-            $ref_by = intval($affid);
-
-            if (User::where("id", "=", $ref_by)->first() != null || $ref_by === 0) {
-                $user->ref_by = $ref_by;
-            } else {
-                $res['ret'] = 0;
-                $res['msg'] = "aff link not exist, affid=".$ref_by;
-                return $response->getBody()->write(json_encode($res));
-            }
-
+        if (Config::get('enable_invite_code')=='true') {
+            $user->ref_by = $c->user_id;
         } else {
-            // should never go here as we have checked int the js
-            $res['ret'] = 0;
-            $res['msg'] = "not valid affid=".$affid;
-            return $response->getBody()->write(json_encode($res));
+            $user->ref_by = 0;
         }
-
-
         $user->expire_in=date("Y-m-d H:i:s", time()+Config::get('user_expire_in_default')*86400);
         $user->reg_date=date("Y-m-d H:i:s");
         $user->reg_ip=$_SERVER["REMOTE_ADDR"];
