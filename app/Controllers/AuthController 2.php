@@ -173,7 +173,7 @@ class AuthController extends BaseController
         if (!empty($_COOKIE['affid'])) {
             $affid=$_COOKIE['affid'];
         }
-
+ 
         if (isset($ary['affid'])) {
             $antiXss = new AntiXSS();
             $affid = $antiXss->xss_clean($ary['affid']);
@@ -378,9 +378,8 @@ class AuthController extends BaseController
         $user->invite_num = Config::get('inviteNum');
         $user->auto_reset_day = Config::get('reg_auto_reset_day');
         $user->auto_reset_bandwidth = Config::get('reg_auto_reset_bandwidth');
-
-
-            //affs
+        
+        // Aff
         if (($affid && (is_numeric($affid))) || $affid == '0') {
             $ref_by = intval($affid);
 
@@ -398,8 +397,6 @@ class AuthController extends BaseController
             $res['msg'] = "not valid affid=".$affid;
             return $response->getBody()->write(json_encode($res));
         }
-
-
         $user->expire_in=date("Y-m-d H:i:s", time()+Config::get('user_expire_in_default')*86400);
         $user->reg_date=date("Y-m-d H:i:s");
         $user->reg_ip=$_SERVER["REMOTE_ADDR"];
