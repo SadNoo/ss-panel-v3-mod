@@ -54,7 +54,7 @@ class Pay
     {
         
             return '
-                        <p class="card-heading">使用支付宝充值</p>
+                        <p>支付宝充值</p>
                         <label for="number">请选择充值金额：</label>
                         <select id="type" class="form-control" name="amount">
                             <option value="'.Config::get('amount')[0].'">'.Config::get('amount')[0].'元</option>
