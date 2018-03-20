@@ -292,42 +292,42 @@ class LinkController extends BaseController
     public static function GetPcConf($user, $is_mu = 0, $is_ss = 0)
     {
         $string='
-	{
-	"index" : 0,
-	"random" : false,
-	"sysProxyMode" : 0,
-	"shareOverLan" : false,
-	"bypassWhiteList" : false,
-	"localPort" : 1080,
-	"localAuthPassword" : "'.Tools::genRandomChar(26).'",
-	"dns_server" : "",
-	"reconnectTimes" : 4,
-	"randomAlgorithm" : 0,
-	"TTL" : 60,
-	"connect_timeout" : 5,
-	"proxyRuleMode" : 1,
-	"proxyEnable" : false,
-	"pacDirectGoProxy" : false,
-	"proxyType" : 0,
-	"proxyHost" : "",
-	"proxyPort" : 0,
-	"proxyAuthUser" : "",
-	"proxyAuthPass" : "",
-	"proxyUserAgent" : "",
-	"authUser" : "",
-	"authPass" : "",
-	"autoBan" : false,
-	"sameHostForSameTarget" : true,
-	"keepVisitTime" : 180,
-	"isHideTips" : true,
-	"token" : {
+    {
+    "index" : 0,
+    "random" : false,
+    "sysProxyMode" : 0,
+    "shareOverLan" : false,
+    "bypassWhiteList" : false,
+    "localPort" : 1080,
+    "localAuthPassword" : "'.Tools::genRandomChar(26).'",
+    "dns_server" : "",
+    "reconnectTimes" : 4,
+    "randomAlgorithm" : 0,
+    "TTL" : 60,
+    "connect_timeout" : 5,
+    "proxyRuleMode" : 1,
+    "proxyEnable" : false,
+    "pacDirectGoProxy" : false,
+    "proxyType" : 0,
+    "proxyHost" : "",
+    "proxyPort" : 0,
+    "proxyAuthUser" : "",
+    "proxyAuthPass" : "",
+    "proxyUserAgent" : "",
+    "authUser" : "",
+    "authPass" : "",
+    "autoBan" : false,
+    "sameHostForSameTarget" : true,
+    "keepVisitTime" : 180,
+    "isHideTips" : true,
+    "token" : {
 
-	},
-	"portMap" : {
+    },
+    "portMap" : {
 
-	}
-	}
-		';
+    }
+    }
+        ';
 
 
         $json=json_decode($string, true);
@@ -366,7 +366,7 @@ class LinkController extends BaseController
 
         $items = URL::getAllItems($user, $is_mu, $is_ss);
         foreach($items as $item) {
-            $proxy_group .= $item['remark'].' = custom,'.$item['address'].','.$item['port'].','.$item['method'].','.$item['passwd'].',http://omgib13x8.bkt.clouddn.com/SSEncrypt.module'.URL::getSurgeObfs($item).',tfo=true'."\n";
+            $proxy_group .= $item['remark'].' = custom,'.$item['address'].','.$item['port'].','.$item['method'].','.$item['passwd'].',http://omgib13x8.bkt.clouddn.com/SSEncrypt.module'.',obfs-host=windows.com'.',tfo=true'."\n";
             $proxy_name .= ",".$item['remark'];
         }
 
@@ -634,7 +634,7 @@ IP-CIDR,172.16.0.0/12,DIRECT
 IP-CIDR,192.168.0.0/16,DIRECT
 GEOIP,CN,DIRECT
 FINAL,DIRECT
-	  ';
+      ';
         $pac_content.=$find_function_content;
         return $pac_content;
     }
@@ -1004,69 +1004,69 @@ FINAL,Proxy';
     private static function GetApn($apn, $server, $port)
     {
         return '
-		<?xml version="1.0" encoding="UTF-8"?>
-		<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-		<plist version="1.0">
-		<dict>
-			<key>PayloadContent</key>
-			<array>
-				<dict>
-					<key>PayloadContent</key>
-					<array>
-						<dict>
-							<key>DefaultsData</key>
-							<dict>
-								<key>apns</key>
-								<array>
-									<dict>
-										<key>apn</key>
-										<string>'.$apn.'</string>
-										<key>proxy</key>
-										<string>'.$server.'</string>
-										<key>proxyPort</key>
-										<integer>'.$port.'</integer>
-									</dict>
-								</array>
-							</dict>
-							<key>DefaultsDomainName</key>
-							<string>com.apple.managedCarrier</string>
-						</dict>
-					</array>
-					<key>PayloadDescription</key>
-					<string>提供对营运商“接入点名称”的自定义。</string>
-					<key>PayloadDisplayName</key>
-					<string>APN</string>
-					<key>PayloadIdentifier</key>
-					<string>com.tony.APNUNI'.$server.'.</string>
-					<key>PayloadOrganization</key>
-					<string>Tony</string>
-					<key>PayloadType</key>
-					<string>com.apple.apn.managed</string>
-					<key>PayloadUUID</key>
-					<string>7AC1FC00-7670-41CA-9EE1-4A5882DBD'.rand(100, 999).'D</string>
-					<key>PayloadVersion</key>
-					<integer>1</integer>
-				</dict>
-			</array>
-			<key>PayloadDescription</key>
-			<string>APN配置文件</string>
-			<key>PayloadDisplayName</key>
-			<string>APN快速配置 - '.$server.' ('.$apn.')</string>
-			<key>PayloadIdentifier</key>
-			<string>com.tony.APNUNI'.$server.'</string>
-			<key>PayloadOrganization</key>
-			<string>Tony</string>
-			<key>PayloadRemovalDisallowed</key>
-			<false/>
-			<key>PayloadType</key>
-			<string>Configuration</string>
-			<key>PayloadUUID</key>
-			<string>4C355D66-E72E-4DC8-864F-62C416015'.rand(100, 999).'D</string>
-			<key>PayloadVersion</key>
-			<integer>1</integer>
-		</dict>
-		</plist>
-		';
+        <?xml version="1.0" encoding="UTF-8"?>
+        <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+        <plist version="1.0">
+        <dict>
+            <key>PayloadContent</key>
+            <array>
+                <dict>
+                    <key>PayloadContent</key>
+                    <array>
+                        <dict>
+                            <key>DefaultsData</key>
+                            <dict>
+                                <key>apns</key>
+                                <array>
+                                    <dict>
+                                        <key>apn</key>
+                                        <string>'.$apn.'</string>
+                                        <key>proxy</key>
+                                        <string>'.$server.'</string>
+                                        <key>proxyPort</key>
+                                        <integer>'.$port.'</integer>
+                                    </dict>
+                                </array>
+                            </dict>
+                            <key>DefaultsDomainName</key>
+                            <string>com.apple.managedCarrier</string>
+                        </dict>
+                    </array>
+                    <key>PayloadDescription</key>
+                    <string>提供对营运商“接入点名称”的自定义。</string>
+                    <key>PayloadDisplayName</key>
+                    <string>APN</string>
+                    <key>PayloadIdentifier</key>
+                    <string>com.tony.APNUNI'.$server.'.</string>
+                    <key>PayloadOrganization</key>
+                    <string>Tony</string>
+                    <key>PayloadType</key>
+                    <string>com.apple.apn.managed</string>
+                    <key>PayloadUUID</key>
+                    <string>7AC1FC00-7670-41CA-9EE1-4A5882DBD'.rand(100, 999).'D</string>
+                    <key>PayloadVersion</key>
+                    <integer>1</integer>
+                </dict>
+            </array>
+            <key>PayloadDescription</key>
+            <string>APN配置文件</string>
+            <key>PayloadDisplayName</key>
+            <string>APN快速配置 - '.$server.' ('.$apn.')</string>
+            <key>PayloadIdentifier</key>
+            <string>com.tony.APNUNI'.$server.'</string>
+            <key>PayloadOrganization</key>
+            <string>Tony</string>
+            <key>PayloadRemovalDisallowed</key>
+            <false/>
+            <key>PayloadType</key>
+            <string>Configuration</string>
+            <key>PayloadUUID</key>
+            <string>4C355D66-E72E-4DC8-864F-62C416015'.rand(100, 999).'D</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+        </plist>
+        ';
     }
 
 
