@@ -296,9 +296,15 @@ $System_Config['sendgrid_sender'] = '';
 
 #支付系统
 
-#取值 paymentwall,zfbjk,spay,none
+#取值 paymentwall,zfbjk,spay,f2fpay,none
 $System_Config['payment_system']='none';
 
+#alipay,f2fpay
+$System_Config['f2fpay_app_id']='';
+$System_Config['f2fpay_p_id']='';
+$System_Config['alipay_public_key']='';
+$System_Config['merchant_private_key']='';
+$System_Config['amount']=[20,50,100,200,500];
 #PaymentWall
 $System_Config['pmw_publickey']='';
 $System_Config['pmw_privatekey']='';
