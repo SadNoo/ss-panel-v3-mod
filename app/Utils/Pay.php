@@ -32,7 +32,6 @@ class Pay
         return '
 						<form action="/user/alipay" method="get" target="_blank" >
 							<h3>支付宝充值</h3>
-                            <p>如需微信充值请联系邮箱：lhie1x@gmail.com</p>
 							<p>充值金额: <input type="text" name="amount" /></p>
 							<input type="submit" value="提交" />
 						</form>
