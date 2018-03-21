@@ -108,13 +108,13 @@
 													<div class="tab-pane fade" id="all_ssr_windows">
 														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ssr-win.7z">客户端</a><br><br>
 														右键<code>ShadowsocksR</code>托盘图标 -> SSR服务器订阅 -> SSR 服务器订阅设置，将订阅地址填入地址后面的编辑框，点击确定。<br><br>
-														获取节点：服务器 -> 更新 SSR 服务器订阅（不通过代理）<br><br>
+														获取节点：服务器订阅 -> 更新 SSR 服务器订阅（不通过代理）<br><br>
 														建议：系统代理 -> 模式 -> 全局模式/Pac模式；代理规则 -> 绕过局域网和大陆</p>
 														<br>游戏/特殊：<a href="http://omgib13x8.bkt.clouddn.com/ssr-tap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_mac">
 														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ssr-mac.dmg">客户端</a><br><br>
-														右键<code>ShadowsocksR</code>的托盘图标 -> 服务器 -> 编辑订阅，点击<code>+</code>，将订阅地址填入订阅地址后面的编辑框，点击<code>OK</code>。<br><br>
+														右键<code>ShadowsocksR</code>的托盘图标 -> 服务器 -> 编辑订阅，点击<code>+</code>，点击<code>Add</code>，将订阅地址填入订阅地址后面的编辑框，点击<code>OK</code>。<br><br>
 														获取节点：服务器 -> 手动更新订阅<br><br>
 														建议：白名单模式/Pac模式</p>
 													</div>
