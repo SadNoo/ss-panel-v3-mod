@@ -474,6 +474,9 @@ class Job
             }
         }
 
+
+
+
         //登录地检测
         if (Config::get("login_warn")=="true") {
             $iplocation = new QQWry();
