@@ -45,14 +45,14 @@
 													<tr>
 														<th>节点</th>
 														<th>电信延迟</th>
-														<th>电信下载速度</th>
 														<th>电信上传速度</th>
+														<th>电信下载速度</th>
 														<th>联通延迟</th>
-														<th>联通下载速度</th>
 														<th>联通上传速度</th>
+														<th>联通下载速度</th>
 														<th>移动延迟</th>
-														<th>移动下载速度</th>
 														<th>移动上传速度</th>
+														<th>移动下载速度</th>
 													</tr>
 													{foreach $speedtest as $single}
 														<tr>
