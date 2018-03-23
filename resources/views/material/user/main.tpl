@@ -337,10 +337,6 @@
 						
 						<a class="waves-attach" data-toggle="collapse" href="#ui_menu_help">交易</a>
 						<ul class="menu-collapse collapse in" id="ui_menu_help">
-						
-						
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
-
 							<li>
 								<a href="/user/shop">
 									<i class="icon icon-lg">shop</i>&nbsp;购买套餐
@@ -353,6 +349,9 @@
 									<i class="icon icon-lg">code</i>&nbsp;在线充值
 								</a>
 							</li>
+
+
+							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
 						</ul>
 						
 						{if $user->isAdmin()}
