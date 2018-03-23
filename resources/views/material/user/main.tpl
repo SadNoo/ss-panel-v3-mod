@@ -306,7 +306,7 @@
 							
 							<li>
 								<a href="/user/lookingglass">
-									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;观察窗
+									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;节点检测
 								</a>
 							</li>
 						</ul>
@@ -328,8 +328,8 @@
 							{/if}
 							
 							<li>
-								<a href="/user">
-									<i class="icon icon-lg">question_answer</i>&nbsp;工单系统（暂停使用）
+								<a href="https://github.com/lhie1/Surge/blob/master/README.md">
+									<i class="icon icon-lg">question_answer</i>&nbsp;规则项目
 								</a>
 							</li>
 						</ul>
@@ -339,20 +339,18 @@
 						<ul class="menu-collapse collapse in" id="ui_menu_help">
 						
 						
+							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
+
 							<li>
 								<a href="/user/shop">
-									<i class="icon icon-lg">shop</i>&nbsp;商店
+									<i class="icon icon-lg">shop</i>&nbsp;购买套餐
 								</a>
 							</li>
 							
-							<li><a href="/user/bought"><i class="icon icon-lg">shopping_cart</i>&nbsp;购买记录</a></li>
-							
-							
-
 
 							<li>
 								<a href="/user/code">
-									<i class="icon icon-lg">code</i>&nbsp;充值
+									<i class="icon icon-lg">code</i>&nbsp;在线充值
 								</a>
 							</li>
 						</ul>

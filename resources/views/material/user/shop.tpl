@@ -25,7 +25,9 @@
 					<div class="card">
 						<div class="card-main">
 							<div class="card-inner">
-								<p>系统中所有商品的列表。您购买等级类的商品时有效期会从当前时间开始计算。</p>
+								<p>系统中所有商品的列表。</p>
+								<p>您购买的商品有效期会自动叠加累计。</p>
+								<p>默认支持 3 IP 同时在线</p>
 								<p>当前余额：{$user->money} 元</p>
 							</div>
 						</div>
