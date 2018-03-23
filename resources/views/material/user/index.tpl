@@ -24,7 +24,7 @@
 							<div class="card">
 								<div class="card-main">
 									<div class="card-inner margin-bottom-no">
-										<p class="card-heading"><a href="/user/announcement"/>公告面板</a></p>
+										<p class="card-heading"><a href="https://t.me/tuClubNews"/>公告面板</a></p>
 										<p><a href="https://github.com/lhie1/tuClub/blob/master/README.md#tuclub-简介">本站简介</a></p>
 										<p><a href="lhie1x@gmail.com">发送邮件</a> / <a href="https://t.me/tuClub">在线联系</a> / <a href="https://telegram.me/tuClub">交流群组</a> / <a href="https://t.me/tuClubNews">公告中心</a></p><br>
 										<p>本站：兼容<code>SS/SSR</code>；支持<code>Surge/SSR</code>托管订阅</p><br>

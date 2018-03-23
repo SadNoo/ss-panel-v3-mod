@@ -266,7 +266,7 @@
 							</li>
 							
 							<li>
-								<a href="/user/announcement">
+								<a href="https://t.me/tuClubNews">
 									<i class="icon icon-lg">announcement</i>&nbsp;查看公告
 								</a>
 							</li>
