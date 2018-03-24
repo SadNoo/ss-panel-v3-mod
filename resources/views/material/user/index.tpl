@@ -130,7 +130,8 @@
 														ACL：<br><code>https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/banAD.acl</code></p>
 													</div>
 													<div class="tab-pane fade" id="all_ssr_router">
-														<p>刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">此帖的固件</a>，然后将订阅地址导入即可。</p>
+														<p>刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">老毛子固件</a> 或 
+														<a href="http://koolshare.cn/thread-133873-1-1.html">梅林固件</a>，然后将订阅地址导入即可。</p>
 													</div>
 												</div>
 												<div class="tab-pane fade {if !$ssr_prefer}active in{/if}" id="all_ss">
@@ -182,7 +183,7 @@
 															<dd>{$user->obfs}</dd></p>
 														</dl>
 														{else}
-															<p>您目前的加密方式、协议、混淆无法在 <code>SS 客户端</code>下连接。请您选用 SSR 客户端来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
+															<p>您目前的加密方式、协议、混淆无法在<code>SS 客户端</code>下连接。请您选用<code>SSR客户端</code>来连接，或者到 资料编辑 页面修改后再来查看此处。</p>
 														{/if}
 													</div>
 													<div class="tab-pane fade" id="all_ss_windows">
@@ -193,17 +194,18 @@
 														推荐：系统代理模式 -> Pac 模式<br><br>
 														Obfs：<br>
 														插件：obfs-local<br>
-														插件选项：obfs=tls;obfs-host=cloudfront.net</p><br>
+														插件选项：obfs=tls;obfs-host=wns.windows.com</p><br>
 														<p>———————————————————————————————
 														<br><br>游戏/特殊：<a href="http://omgib13x8.bkt.clouddn.com/ssr-tap.7z">SS-Tap</a><br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_mac">
 														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-mac.zip">客户端</a><br><br>
 														<a href="/user/getpcconf?is_mu=0&is_ss=1">下载节点信息配置文件</a>，右键`Shadowsocks`的托盘图标 -> 服务器列表 -> 导入服务器配置文件...，选择这个文件（gui-config.json<br><br>
-														推荐：Pac模式<br></p>
+														推荐：Pac模式<br><br>
+														备注：暂不支持 obfs，建议使用 ShadowsocksR 订阅模式<br> </p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_ios">
-														<p>推荐使用 <code>Workflow</code> 导入Surge：<br><br><a href="https://workflow.is/workflows/3a32d2bf7750466da15749eedc60ea18">🐰 User Data</a> / <a href="https://workflow.is/workflows/df5a74a8efb14218ba15fe64d94fa9f5">Rule OTA</a></p>
+														<p>推荐使用 <code>Workflow</code> 导入Surge：<br><br><a href="https://workflow.is/workflows/46aa4707cccb474fba8b863e65b6f474">🐰 User Data</a> / <a href="https://workflow.is/workflows/861b71cde59148c6b073e5cc489d34b5">Rule OTA</a></p>
 													</div>
 													<div class="tab-pane fade" id="all_ss_android">
 														<p>下载：<a href="http://omgib13x8.bkt.clouddn.com/ss-android.apk">客户端</a> 和 <a href="http://omgib13x8.bkt.clouddn.com/ss-android-obfs.apk">插件</a><br><br>
@@ -211,13 +213,10 @@
 														推荐：路由：绕过局域网及中国大陆地址<br><br>
 														Obfs：<br>
 														插件：obfs-local<br>
-														插件选项：obfs=tls;obfs-host=cloudfront.net</p><br>
+														插件选项：obfs=tls;obfs-host=wns.windows.com</p><br>
 													</div>
 													<div class="tab-pane fade" id="all_ss_router">
-														<p>路由器 刷入<a href="http://www.right.com.cn/forum/thread-161324-1-1.html">此帖的固件</a>，然后 SSH 登陆路由器，执行以下命令：<br>
-														<code>wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash && echo -e "\n0 */3 * * * wget -O- {$baseUrl}/link/{$router_token}?is_ss=1 | bash\n">> /etc/storage/cron/crontabs/admin && killall crond && crond </code><br><br>
-														执行完毕以后就可以到路由器的设置面板里随意选择 Shadowsocks 服务器进行连接了。<br><br>
-														离线安装包：<a href="/ssr-branch/ss-merlin.tar">SS-Merlin</a></p>
+														<p>建议使用 ShadowsocksR 订阅模式</p>
 													</div>
 												</div>
 											</div>
@@ -231,7 +230,7 @@
 												<p>Surge 托管地址：<br>
 													<code>{$baseUrl}/link/{$ios_token}?is_ss=1</code></p><br>
 												<p>使用<code>Workflow</code>导入（Surge / Shadowrcoket）：<br><br>
-													<a href="https://workflow.is/workflows/3a32d2bf7750466da15749eedc60ea18">🐰 User Data</a> / <a href="https://workflow.is/workflows/df5a74a8efb14218ba15fe64d94fa9f5">Rule OTA</a><br><br>
+													<a href="https://workflow.is/workflows/46aa4707cccb474fba8b863e65b6f474">🐰 User Data</a> / <a href="https://workflow.is/workflows/861b71cde59148c6b073e5cc489d34b5">Rule OTA</a><br><br>
 												<p>兼容：<code>Surge</code>使用普通端口模式 | <code>SSR</code>使用固定端口模式</p>
 												<p>备注：除 <code>Surge 客户端</code> 都建议使用 <code>SSR 客户端 + SSR 订阅</code></p>
 												<p>备注：<code>SSR 普通端口</code>与<code>SSR 固定端口</code>在实际使用中无差别</p>

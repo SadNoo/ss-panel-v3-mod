@@ -72,6 +72,8 @@ $app->get('/404', 'App\Controllers\HomeController:page404');
 $app->get('/405', 'App\Controllers\HomeController:page405');
 $app->get('/500', 'App\Controllers\HomeController:page500');
 $app->get('/pwm_pingback', 'App\Controllers\HomeController:pay_callback');
+$app->get('/pay91', 'App\Controllers\HomeController:pay_callback');
+$app->post('/notify', 'App\Controllers\HomeController:notify');
 $app->post('/alipay_callback', 'App\Controllers\HomeController:pay_callback');
 $app->post('/pay_callback', 'App\Controllers\HomeController:pay_callback');
 $app->get('/pay_callback', 'App\Controllers\HomeController:pay_callback');
@@ -80,6 +82,8 @@ $app->get('/tos', 'App\Controllers\HomeController:tos');
 $app->get('/staff', 'App\Controllers\HomeController:staff');
 $app->get('/gfwlistjs', 'App\Controllers\LinkController:GetGfwlistJs');
 $app->post('/telegram_callback', 'App\Controllers\HomeController:telegram');
+$app->get('/jsj_callback', 'App\Controllers\HomeController:jsj_callback');
+$app->post('/jsj_callback', 'App\Controllers\HomeController:pay_callback');
 
 
 // User Center
@@ -137,6 +141,8 @@ $app->group('/user', function () {
     $this->get('/logout', 'App\Controllers\UserController:logout');
     $this->get('/code', 'App\Controllers\UserController:code');
     $this->get('/alipay', 'App\Controllers\UserController:alipay');
+    $this->get('/code/jsjapp', 'App\Controllers\UserController:jsjapp');
+    $this->get('/code/pay91', 'App\Controllers\pay91');
     $this->post('/code/f2fpay', 'App\Controllers\UserController:f2fpay');
     $this->get('/code/f2fpay', 'App\Controllers\UserController:f2fpayget');
     $this->get('/code_check', 'App\Controllers\UserController:code_check');
@@ -152,8 +158,8 @@ $app->group('/user', function () {
     $this->post('/unblock', 'App\Controllers\UserController:Unblock');
     $this->get('/bought', 'App\Controllers\UserController:bought');
     $this->delete('/bought', 'App\Controllers\UserController:deleteBoughtGet');
-
     $this->get('/url_reset', 'App\Controllers\UserController:resetURL');
+
 })->add(new Auth());
 
 // Auth
@@ -161,6 +167,7 @@ $app->group('/auth', function () {
     $this->get('/login', 'App\Controllers\AuthController:login');
     $this->get('/qrcode_check', 'App\Controllers\AuthController:qrcode_check');
     $this->post('/login', 'App\Controllers\AuthController:loginHandle');
+    $this->post('/logins', 'App\Controllers\AuthController:loginHandles');
     $this->post('/qrcode_login', 'App\Controllers\AuthController:qrcode_loginHandle');
     $this->get('/register', 'App\Controllers\AuthController:register');
     $this->post('/register', 'App\Controllers\AuthController:registerHandle');
@@ -249,15 +256,15 @@ $app->group('/admin', function () {
     $this->post('/auto/ajax', 'App\Controllers\Admin\AutoController:ajax');
 
     // IP Mange
+    $this->get('/alive', 'App\Controllers\Admin\IpController:alive');
     $this->get('/block', 'App\Controllers\Admin\IpController:block');
     $this->get('/unblock', 'App\Controllers\Admin\IpController:unblock');
     $this->post('/unblock', 'App\Controllers\Admin\IpController:doUnblock');
     $this->get('/login', 'App\Controllers\Admin\IpController:index');
-    $this->get('/alive', 'App\Controllers\Admin\IpController:alive');
+    $this->post('/alive/ajax', 'App\Controllers\Admin\IpController:ajax_alive');
     $this->post('/block/ajax', 'App\Controllers\Admin\IpController:ajax_block');
     $this->post('/unblock/ajax', 'App\Controllers\Admin\IpController:ajax_unblock');
     $this->post('/login/ajax', 'App\Controllers\Admin\IpController:ajax_login');
-    $this->post('/alive/ajax', 'App\Controllers\Admin\IpController:ajax_alive');
 
     // Code Mange
     $this->get('/code', 'App\Controllers\Admin\CodeController:index');
@@ -293,6 +300,16 @@ $app->group('/api', function () {
     $this->post('/token', 'App\Controllers\ApiController:newToken');
     $this->get('/node', 'App\Controllers\ApiController:node')->add(new Api());
     $this->get('/user/{id}', 'App\Controllers\ApiController:userInfo')->add(new Api());
+    $this->get('/announcement','App\Controllers\Client\ClientApiController:GetAnnouncement');
+    $this->get('/redirect','App\Controllers\Client\ClientApiController:Redirect');
+    $this->get('/sublink','App\Controllers\Client\ClientApiController:GetSubLink');
+    $this->get('/login', 'App\Controllers\ApiController:login')->add(new Api());
+});
+
+//Client pages
+$app->group('/client',function (){
+    $this->get('/shop','App\Controllers\Client\ClientShopController:GetShop');
+    $this->get('/code','App\Controllers\Client\ClientShopController:GetCode');
 });
 
 // mu
