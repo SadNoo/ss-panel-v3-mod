@@ -306,7 +306,13 @@
 							
 							<li>
 								<a href="/user/lookingglass">
-									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;节点检测
+									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;下载速度
+								</a>
+							</li>
+
+							<li>
+								<a href="http://status.lhie1.com">
+									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;监控面板
 								</a>
 							</li>
 						</ul>
