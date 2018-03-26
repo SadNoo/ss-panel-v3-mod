@@ -311,7 +311,7 @@
 							</li>
 
 							<li>
-								<a href="http://status.lhie1.com">
+								<a href="http://status.lhie1.com/d/gr913bkik/network?refresh=30s&orgId=1">
 									<i class="icon icon-lg">youtube_searched_for</i>&nbsp;监控面板
 								</a>
 							</li>
