@@ -186,6 +186,7 @@ class ApiController extends BaseController
 
   public function login($request, $response, $args){
     //是否是登录
+    $pageNum = 0
     $user = Auth::getUser();
     $base_url = Config::get('baseUrl');
     $shops = Shop::where("status", 1)->paginate(15, ['*'], 'page', $pageNum);
